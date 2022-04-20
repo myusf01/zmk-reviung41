@@ -74,6 +74,7 @@
 #define _BACKTICK RA(BACKSLASH)
 #define _TILDE RA(RIGHT_BRACKET)
 #define _NUMBER_SIGN RA(N3) //hashtag sign
+#define _SSWIN LGUI(LSHFT(S)) //Screenshot shortcut for Windows
 #define _LOCKSCREEN LC(LS(C_PWR)) // Screen Lock shortcut for OSX
 
 // Layers
@@ -100,12 +101,12 @@
 // |Npd/ESC|  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |   BKSP  |
 // |Sft/Cps|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ş  |    İ    |
 // |LCtlTab|  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  Ö  |  Ç  |  .  | LCtlEnt |
-//                         |LGUI/$| LWR/, | SPC* | RSE/"  | ALT/@ |
+//                         |LALT/$| LWR/, | SPC* | RSE/"  | LGUI/@ |
                         bindings = <
    &lt _NUMPAD ESC  &kp Q  &kp W  &kp E  &kp R  &kp T           &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC
    &mt LSHFT CLCK  &kp A  &kp S  &kp D  &kp F  &kp G            &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT
    &mt LCTRL TAB  &kp Z  &kp X  &kp C  &kp V  &kp B             &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt LCTRL RET
-        &mt LGUI _DOLLAR_SIGN  &lt _LOWER BSLH    &lt _SPACE SPACE    &lt _RAISE NON_US_BACKSLASH  &mt LALT _AT_SIGN
+        &mt LALT _DOLLAR_SIGN  &lt _LOWER BSLH    &lt _SPACE SPACE    &lt _RAISE NON_US_BACKSLASH  &mt LGUI _AT_SIGN
                         >;
                 };
 
@@ -125,7 +126,7 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// | Tab |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | Bksp |
+// | Tab |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | F1  | F2  | F3  | F4  | F5  | F6  |   |     |  *  |  -  | "\" | "|" |  ,   |
 // | F7  | F8  | F9  | F10 | F11 | F12 |   |  '  |  #  |  "  | "~" | "`" |  <>| |
 //                       |     | ADJ | BKSP |    |     |
@@ -140,14 +141,14 @@
 
                 space_layer {
 // -----------------------------------------------------------------------------------------
-// |     |CMD+1|CMD+2|CMD+3|CMD+4|CMD+5|   | CMD+6 |CMD+7|CMD+8|CMD+9|CMD+0|LckOSX|
-// |     |Brgt▼|Brgt▲|     |     |     |   | Left  |Down | Up  |Right|     |      |
-// |     |     |     |     |     |     |   |PlayPse|     |     |     |     |      |
+// |     |CMD+1|CMD+2|CMD+3|CMD+4|CMD+5|   | CMD+6 |CMD+7|CMD+8|CMD+9|CMD+0|DELETE|
+// |     |Brgt▼|Brgt▲|     |     |     |   |      |UP |    |   |     |      |
+// |     |     |     |     |     |PlayPse|   |LEFT|DOWN|RIGHT|     |     |      |
 //                  |  Vol-    | Prev |     | Next  |  Vol+   |
                         bindings = <
-   &trans  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)           &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &kp _LOCKSCREEN
-   &trans  &kp C_BRI_INC  &kp C_BRI_DEC &trans &trans &trans                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans                               &kp C_PLAY_PAUSE  &trans  &trans  &trans  &trans  &trans
+   &trans  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)           &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &kp DEL
+   &trans  &kp C_BRI_INC  &kp C_BRI_DEC &trans &trans &trans                    &trans  &kp UP  &trans  &trans  &trans  &trans
+   &trans  &trans  &trans  &trans  &trans  &KP C_PLAY_PAUSE                     &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans
                         &kp C_VOL_DN  &kp C_PREV    &trans    &kp C_NEXT     &kp C_VOL_UP /* TODO arrow keys instead of media keys ?*/
                         >;
                 };
@@ -155,14 +156,14 @@
                 // KP_DOT is comma on the Turkish layout ¯\_(ツ)_/¯
                 numpad_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |     |   |  =  |Num7 |Num8 |Num9 |  -  |Bcksp |
-// |     |     |     |     |     |     |   |  .  |Num4 |Num5 |Num6 |  +  |  +   |
-// |     |     |     |     |     |     |   |  ,  |Num1 |Num2 |Num3 |  .  |  /   |
+// |_SSWIN|     |     |     |     |   =  |   |Num7 |Num8 |Num9 |  -  |   | BKSP|
+// |     |     |     |     |     |  .   |   |Num4 |Num5 |Num6 |  +  |   |     |
+// |     |     |     |     |     |  ,   |   |Num1 |Num2 |Num3 |  .  |   |     |
 //                   |      |     | Enter |  Num0   |  Num0   |
                         bindings = <
-   &none  &none  &none  &none  &none  &none                     &kp KP_EQUAL  &kp N7  &kp N8  &kp N9  &kp KP_MINUS  &kp BSPC
-   &none  &none  &none  &none  &none  &none                     &kp SLASH  &kp N4  &kp N5  &kp N6  &kp KP_PLUS  &kp KP_PLUS
-   &none  &none  &none  &none  &none  &none                     &kp KP_DOT &kp N1  &kp N2  &kp N3  &kp SLASH  &kp KP_SLASH
+   &kp _SSWIN    &none  &none  &none  &none  &kp KP_EQUAL              &kp N7  &kp N8  &kp N9  &kp KP_MINUS  &none  &kp BSPC
+   &none         &none  &none  &none  &none  &kp SLASH                 &kp N4  &kp N5  &kp N6  &kp KP_PLUS  &none  &none
+   &none         &none  &none  &none  &none  &kp KP_DOT                &kp N1  &kp N2  &kp N3  &kp SLASH  &none  &none
                                 &none  &none    &kp RET    &kp N0  &kp N0 
                         >;
                 };
