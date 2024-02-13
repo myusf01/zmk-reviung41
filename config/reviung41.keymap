@@ -130,7 +130,7 @@
 // |     |     |     |     |     |  ,   |   |Num1 |Num2 |Num3 |  .  |     |     |
 //                   |      |     | Enter |  Num0   |  Num0   |
                         bindings = <
-   &none    &kp _WIN_SS  &none  &kp _PT_LAUNCHER  &none  &kp RPAR                 &kp N7  &kp N8  &kp N9  &kp KP_MINUS  &kp MINUS  &kp BSPC
+   &none    &kp _WIN_SS  &kp _WIN_CLIP  &kp _PT_LAUNCHER  &kp _WIN_EMOJI  &kp RPAR                 &kp N7  &kp N8  &kp N9  &kp KP_MINUS  &kp MINUS  &kp BSPC
    &none         &none  &none  &none  &kp _PT_LAYOUT  &kp SLASH                 &kp N4  &kp N5  &kp N6  &kp KP_PLUS   &kp AMPS   &none
    &none         &none  &none  &none  &none  &kp KP_DOT                &kp N1  &kp N2  &kp N3  &kp SLASH     &none      &none
                                 &none  &none    &kp RET    &kp N0  &kp N0 
