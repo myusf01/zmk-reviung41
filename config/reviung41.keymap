@@ -40,13 +40,14 @@
 #define _BACKTICK RA(BACKSLASH)
 #define _TILDE RA(RIGHT_BRACKET)
 #define _NUMBER_SIGN RA(N3) //hashtag sign
-#define _PT_LAYOUT LG(DQT) // PoweToys Layout Edit
+#define _PT_LAYOUT LG(GRAVE) // PoweToys Layout Edit
 #define _PT_LAUNCHER LA(SPACE) // PowerToys Launcher
 #define _LOCKSCREEN LC(LS(C_PWR)) // Screen Lock shortcut for OSX
 #define _WIN_SS LG(LS(S)) //Screenshot shortcut for Windows
 #define _WIN_CLIP LG(V) //Clipboard shortcut for Windows
 #define _WIN_EMOJI LG(FSLH) //Emoji shortcut for Windows
-// TODO: Add windows select text shortcut.
+#define _WIN_TEXT LG(LS(T)) //Select text shortcut for Windows
+
 // Layers
 #define _QWERTY 0
 #define _LOWER 1
