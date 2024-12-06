@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 
+
 // For QMK:
 // KC_NONUS_BSLASH (\|) is equivalent to ["é] key in Turkish keyboards.
 // KC_GRV (~ `) is equivalent to [<>|] key in Turkish keyboards.
@@ -84,12 +85,12 @@
 // |  >  |  !  |  '  |  ^  |  +  |  %  |   |  &  |  /  |  (  |  )  |  =  |   BKSP    |
 // | F1  | F2  | F3  | F4  | F5  | F6  |   | "$" |  ?  |  #  |   "|" |  _  |     -     |
 // | F7  | F8  | F9  | F10 | F11 | F12 |   | "[" | "]" | "{" | "}" |  <  |    ">"    |
-//                       | F13  |    |  RET  | ADJ | F14 |
+//                       | F13  |    |  RET  | ADJ | STD-UNLOCK |
                         bindings = <
    &kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT           &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &kp BSPC
    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                       &kp _DOLLAR_SIGN  &kp UNDERSCORE     &kp NON_US_HASH &kp _VERTICAL_PIPE &kp PLUS  &kp EQUAL
    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12                    &kp _SQUARE_OPEN  &kp _SQUARE_CLOSE  &kp _CURLY_OPEN  &kp _CURLY_CLOSE  &kp NON_US_BACKSLASH  &kp LS(NON_US_BACKSLASH)
-                        &kp F13  &trans    &kp RET    &mo _ADJUST  &kp F14 /* TODO */
+                        &kp F13  &trans    &kp RET    &mo _ADJUST  &studio_unlock /* TODO */
                         >;
                 };
 
